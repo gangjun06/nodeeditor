@@ -478,14 +478,14 @@ save() const
 {
   QString fileName =
     QFileDialog::getSaveFileName(nullptr,
-                                 tr("Open Flow Scene"),
+                                 tr("Open Node Script"),
                                  QDir::homePath(),
-                                 tr("Flow Scene Files (*.flow)"));
+                                 tr("Node Script Files (*.node)"));
 
   if (!fileName.isEmpty())
   {
-    if (!fileName.endsWith("flow", Qt::CaseInsensitive))
-      fileName += ".flow";
+    if (!fileName.endsWith("node", Qt::CaseInsensitive))
+      fileName += ".node";
 
     QFile file(fileName);
     if (file.open(QIODevice::WriteOnly))
@@ -506,9 +506,9 @@ load()
 
   QString fileName =
     QFileDialog::getOpenFileName(nullptr,
-                                 tr("Open Flow Scene"),
+                                 tr("Open Node Script"),
                                  QDir::homePath(),
-                                 tr("Flow Scene Files (*.flow)"));
+                                 tr("Node Script Files (*.node)"));
 
   if (!QFileInfo::exists(fileName))
     return;
